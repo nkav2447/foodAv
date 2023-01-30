@@ -1,0 +1,155 @@
+<% layout('layouts/boilerplate')%>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    background-image: linear-gradient(80deg, #e9c984, #aaeff3);
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .image img {
+    width: 100%;
+    height: 300;
+    transition: all 2s ease-in-out;
+  }
+
+  .image:hover img {
+    transform: scale(1.1, 1.1);
+  }
+</style>
+
+<div class="container-fluid mb-3">
+  <div class="row">
+    <div class="col col-lg-6 col-sm-12 pt-5 mb-5">
+      <table class="table table-responsive-xxl">
+        <thead>
+          <tr>
+            <th>Ingredients</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% if (foundMeal.strIngredient1) {%>
+            <td><%= foundMeal.strIngredient1%></td>
+            <td><%= foundMeal.strMeasure1%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient2) {%>
+            <td><%= foundMeal.strIngredient2%></td>
+            <td><%= foundMeal.strMeasure2%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient3) {%>
+            <td><%= foundMeal.strIngredient3%></td>
+            <td><%= foundMeal.strMeasure3%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient4) {%>
+            <td><%= foundMeal.strIngredient4%></td>
+            <td><%= foundMeal.strMeasure4%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient5) {%>
+            <td><%= foundMeal.strIngredient5%></td>
+            <td><%= foundMeal.strMeasure5%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient6) {%>
+            <td><%= foundMeal.strIngredient6%></td>
+            <td><%= foundMeal.strMeasure6%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient7) {%>
+            <td><%= foundMeal.strIngredient7%></td>
+            <td><%= foundMeal.strMeasure7%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient8) {%>
+            <td><%= foundMeal.strIngredient8%></td>
+            <td><%= foundMeal.strMeasure8%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient9) {%>
+            <td><%= foundMeal.strIngredient9%></td>
+            <td><%= foundMeal.strMeasure9%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient10) {%>
+            <td><%= foundMeal.strIngredient10%></td>
+            <td><%= foundMeal.strMeasure10%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient11) {%>
+            <td><%= foundMeal.strIngredient11%></td>
+            <td><%= foundMeal.strMeasure11%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient12) {%>
+            <td><%= foundMeal.strIngredient12%></td>
+            <td><%= foundMeal.strMeasure12%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient13) {%>
+            <td><%= foundMeal.strIngredient13%></td>
+            <td><%= foundMeal.strMeasure13%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient14) {%>
+            <td><%= foundMeal.strIngredient14%></td>
+            <td><%= foundMeal.strMeasure14%></td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if (foundMeal.strIngredient15) {%>
+            <td><%= foundMeal.strIngredient15%></td>
+            <td><%= foundMeal.strMeasure15%></td>
+            <% } %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col col-lg-6 col-12 mb-5">
+      <h1 class="pb-8 mb-5"><%= foundMeal.strMeal %></h1>
+      <div class="image"><img class="rounded" src="<%= foundMeal.strMealThumb %> " /></div>
+    </div>
+    <div class="col col-lg-10 col-12 mx-auto mb-5">
+      <h2 class="text-center">Instructions</h2>
+      <p class="text-wrap text-lowercase text-justify"><%= foundMeal.strInstructions %></p>
+    </div>
+    <div
+      class="col col-lg-10 col-12 mx-auto d-flex aligns-items-center mb-9 embed-responsive embed-responsive-21by9"
+    >
+      <iframe
+        class="col col-lg-10 col-12 mx-auto mb-3 embed-responsive-item mx-auto rounded"
+        height="350"
+        src="https://www.youtube.com/embed/<%= yt_id %>"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="mt-5"></div>
+  </div>
+</div>
