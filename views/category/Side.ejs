@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate')%>
+<style>
+  body {
+    background-image: linear-gradient(80deg, rgb(150, 111, 184), rgb(95, 140, 185));
+  }
+  h1 {
+    color: white;
+  }
+</style>
+<div class="container">
+  <h1 class="text-center">Side</h1>
+  <div class="row mb-5">
+    <% for (let i = 0; i < mealsLength; i++) {%>
+    <div class="bg-image col-lg-4 col-md-6 col-sm-6" style="max-width: 32rem">
+      <a href="/meals/sideMeal/<%= meals[i].idMeal %> ">
+        <img src="<%=meals[i].strMealThumb%>" class="w-100 rounded-top mt-3" />
+      </a>
+      <div
+        class="mask text-light d-flex justify-content-center flex-column text-center rounded-bottom"
+        style="background-color: rgba(0, 0, 0, 0.644)"
+      >
+        <h5><%= meals[i].strMeal %></h5>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
