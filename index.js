@@ -6,6 +6,8 @@ const favicon = require('serve-favicon')
 const app = express();
 const port = process.env.PORT || 3000
 
+app.use(express.static("public"))
+app.use(favicon(__dirname + '/public/favicon.ico'))
 
 app.engine('ejs', ejsMate)
 app.set('views', path.join(__dirname, 'views'))
