@@ -1,0 +1,44 @@
+<style>
+  nav {
+    background-color: rgb(101, 70, 129);
+    opacity: 0.9;
+  }
+  @import url("https://fonts.googleapis.com/css?family=Meie+Script|Shadows+Into+Light");
+  .font_meie_script {
+    font-family: "Meie Script", cursive;
+  }
+
+  .font_shadows_into_light {
+    font-family: "Shadows Into Light", cursive;
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand font_shadows_into_light" href="/home">foodsAv</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link mx-2 active font_meie_script" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 font_meie_script" href="/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 font_meie_script" href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
