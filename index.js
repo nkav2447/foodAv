@@ -1,3 +1,5 @@
+// Require the necessary modules
+
 const axios = require("axios")
 const path = require('path')
 const express = require('express')
@@ -7,11 +9,16 @@ const app = express();
 const port = process.env.PORT || 3000
 
 app.use(express.static("public"))
+
 app.use(favicon(__dirname + '/public/favicon.ico'))
+
+// Views folder and EJS setup:
 
 app.engine('ejs', ejsMate)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
+
+// Setup routes for the home, categories, and about page
 
 app.get('/home', (req, res) => {
     res.render('home')
@@ -26,6 +33,8 @@ app.get('/categories', async (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about')
 })
+
+// Setup routes for the diffrent food categories
 
 app.get('/Beef', async function (req, res) {
     const resCategory = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef`)
@@ -110,6 +119,8 @@ app.get('/Vegetarian', async function (req, res) {
     const mealsLength = meals.length
     res.render('category/Vegetarian', { meals, mealsLength })
 })
+
+// Setup routes for meals corresponding to food categories
 
 app.get('/meals/beefMeal/:id', async (req, res) => {
     const { id } = req.params
