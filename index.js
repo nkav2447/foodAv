@@ -17,6 +17,16 @@ app.get('/home', (req, res) => {
     res.render('home')
 })
 
+app.get('/categories', async (req, res) => {
+    const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')
+    const categories = response.data.categories
+    res.render('categories', { categories })
+})
+
+app.get('/about', (req, res) => {
+    res.render('about')
+})
+
 app.listen(port, () => {
     console.log(`port started on port ${port}`)
 })
